@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WE LOVE N-word</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        h1 {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+        }
+        .shape-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        .shape-box {
+            background-color: #ffffff;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>N-word</h1>
+
+    <div class="shape-container">
+        <div class="shape-box">
+            <h2>Circle</h2>
+            <label for="circleDiameter">Enter Diameter:</label>
+            <input type="number" id="circleDiameter">
+            <button onclick="calculateCircleCircumference()">Calculate Circumference (Diameter)</button>
+
+            <label for="circleRadius">Enter Radius:</label>
+            <input type="number" id="circleRadius">
+            <button onclick="calculateCircleCircumferenceRadius()">Calculate Circumference (Radius)</button>
+        </div>
+
+        <div class="shape-box">
+            <h2>Rectangle</h2>
+            <label for="rectangleWidth">Enter Width:</label>
+            <input type="number" id="rectangleWidth">
+            <label for="rectangleLength">Enter Length:</label>
+            <input type="number" id="rectangleLength">
+            <button onclick="calculateRectangleArea()">Calculate Area</button>
+        </div>
+    </div>
+
+    <div class="shape-container">
+        <div class="shape-box">
+            <h2>Square</h2>
+            <label for="squareSide">Enter Side Length:</label>
+            <input type="number" id="squareSide">
+            <button onclick="calculateSquareArea()">Calculate Area</button>
+            <button onclick="calculateSquarePerimeter()">Calculate Perimeter</button>
+        </div>
+
+        
+
+    <p id="result"></p>
+
+    <script>
+        function calculateCircleCircumference() {
+            const diameter = parseFloat(document.getElementById("circleDiameter").value);
+            const circumference = Math.PI * diameter;
+            document.getElementById("result").innerHTML = `Circumference (Diameter): ${circumference}`;
+        }
+
+        function calculateCircleCircumferenceRadius() {
+            const radius = parseFloat(document.getElementById("circleRadius").value);
+            const circumference = 2 * Math.PI * radius;
+            document.getElementById("result").innerHTML = `Circumference (Radius): ${circumference}`;
+        }
+
+        function calculateRectangleArea() {
+            const width = parseFloat(document.getElementById("rectangleWidth").value);
+            const length = parseFloat(document.getElementById("rectangleLength").value);
+            const area = width * length;
+            document.getElementById("result").innerHTML = `Area: ${area}`;
+        }
+
+        function calculateSquareArea() {
+            const side = parseFloat(document.getElementById("squareSide").value);
+            const area = side * side;
+            document.getElementById("result").innerHTML = `Area: ${area}`;
+        }
+
+        function calculateSquarePerimeter() {
+            const side = parseFloat(document.getElementById("squareSide").value);
+            const perimeter = 4 * side;
+            document.getElementById("result").innerHTML = `Perimeter: ${perimeter}`;
+        }
+    </script>
+</body>
+</html>
